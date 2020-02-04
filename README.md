@@ -96,6 +96,13 @@ Cuando se instala por primera vez, desde `c1`se procede al formateo del disposit
 cual se debe hacer sólo una vez, pues es una operaci{on a nivel del dispositivo de bloque.
 
 
-# Apéndice: Instalación manual
+# Apéndice A: Referencias
+
+* http://www.oracle.com/us/technologies/linux/ocfs2-best-practices-2133130.pdf OCFS2 Best Practices Guide  (2014)
+* https://bitbucket.org/hirofuchi/xnbd/wiki/Home#!scenario-4-ocfs2-with-xnbd
+* https://blogs.oracle.com/cloud-infrastructure/a-simple-guide-to-oracle-cluster-file-system-ocfs2-using-iscsi-on-oracle-cloud-infrastructure OCFS2 + iSCSI
+* https://www.howtoinstall.me/ubuntu/18-04/gfs2-utils/
+
+# Apéndice B: Instalación manual
 
 Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manual.md) 
