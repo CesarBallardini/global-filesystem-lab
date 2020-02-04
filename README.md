@@ -98,4 +98,4 @@ cual se debe hacer sólo una vez, pues es una operaci{on a nivel del dispositivo
 
 # Apéndice: Instalación manual
 
-Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manukl.md) 
+Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manual.md) 
