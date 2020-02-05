@@ -73,7 +73,18 @@ sudo apt install git
 ```bash
 git clone https://github.com/CesarBallardini/global-filesystem-lab.git
 cd global-filesystem-lab/
+```
+
+* para Lab1:
+
+```bash
 cp Vagrantfile.auto Vagrantfile
+```
+
+* para Lab2:
+
+```bash
+cp Vagrantfile.shared-disk Vagrantfile
 ```
 
 * levante las VMs
@@ -100,21 +111,20 @@ vagrant destroy -f
 
 En cada VM se pueden verificar que las partes están funcionando correctamente.
 
-## `san`
+## `san` (en caso de Lab1)
 
 La VM tiene el servidor de xNBD; verifique que el proceso está corriendo.
 
-## `c1`y `c2`
+## `c1`y `c2` (en Lab1 y Lab2)
 
 En ambas VMs debe estar montado un filesystem tipo `ocfs2` en i`/mnt/ocfs2/`.
 Cuando en `c1` se escribe en ese directorio, se puede verificar que las modificaciones
 se pueden ver desde `c2`.
 
-Además debe estar corriendo el cliente de NBD, una precondici{on para que funcione el cluster
-OCFS" y que  gracias a eso se pueda haber montado el directorio mencionado.
-
-Cuando se instala por primera vez, desde `c1`se procede al formateo del dispositivo  `/dev/nbd0`, lo 
-cual se debe hacer sólo una vez, pues es una operaci{on a nivel del dispositivo de bloque.
+Además, en caso de Lab1, debe estar corriendo el cliente de NBD, una precondición para que funcione el cluster
+OCFS" y que  gracias a eso se pueda haber montado el directorio mencionado.  Cuando se instala por primera vez, 
+desde `c1`se procede al formateo del dispositivo  `/dev/nbd0`, lo cual se debe hacer sólo una vez,
+pues es una operaci{on a nivel del dispositivo de bloque.
 
 
 # Apéndice A: Referencias
