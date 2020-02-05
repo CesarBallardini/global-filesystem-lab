@@ -43,7 +43,11 @@ Cuando la VM se detiene se debe desconectar el disco, de manera que al destruirl
 Se puede entonces levantar las VMs, y se creará el disco, formateado y montado.  Cuando las VMs se detienen o incluso se destruyen
 el disco externo no se ve afectado.
 
-Para eliminar el disco, se debe usar el mandato `vboxmanage` para quitarlo del registro de VirtualBox.
+Una vez terminadas las pruebas, para eliminar el disco se debe usar el mandato `vboxmanage` para quitarlo del registro de VirtualBox.
+
+```bash
+VBoxManage closemedium disk .vagrant/disk_data3.vdi --delete
+```
 
 
 
