@@ -3,8 +3,18 @@
 Laboratorio para experimentar con cluster filesystems.
 
 Se realiza una prueba de concepto con OCFS2 Oracle Cluster Filesystem v2, 
-el dispositivo de bloques que será el disco compartido se proporciona mediante 
-xNBD (Network Block Device).
+el dispositivo de bloques que será un disco compartido.
+
+Los pasos siguientes son:
+
+* utilizar una SAN externa, crear una LUN y presentarla a Virtualbox o VMware, para usarla como disco RAW compartido e independiente.
+
+
+# Laboratorios
+
+## Lab1 - SAN emulada con NBD
+
+El disco ocompartido se proporciona mediante  una VM `san` a través de xNBD (Network Block Device).
 
 Una VM denominada `san` expone un dispositivo NBD imitando el servicio de una
 SAN que proporciona una LUN. Dos VMs, denominadas `c1` y `c2` son los clientes que necesitan compartir
@@ -20,10 +30,21 @@ compartido a través de un filesystem de cluster.
 Si el dispositivo de bloques es proporcionado por una SAN externa, se aprovechan las capacidades de
 replicación y distribución de la SAN para dar confiabilidad al servicio de filesystem compartido.
 
-Los pasos siguientes son:
 
-* crear un disco independiente con Virtualbox y conectarlo a `c1`y `c2`, eliminando así la VM `san` y todo el software de NBD.
-* utilizar una SAN externa, crear una LUN y presentarla a Virtualbox o VMware, para usarla como disco RAW compartido e independiente.
+## Lab2 - Disco compartido externo a las VMs
+
+Se un disco independiente con Virtualbox y se conectarlo a `c1`y `c2`, eliminando así la VM `san` y todo el software de NBD.
+
+En el `Vagrantfile`  se crea el disco y se lo tipifica como `shareable`, si no existe previamente el archivo que lo sostiene.
+
+Cuando la VM se detiene se debe desconectar el disco, de manera que al destruirla no se elimine el disco del sistema.
+
+
+Se puede entonces levantar las VMs, y se creará el disco, formateado y montado.  Cuando las VMs se detienen o incluso se destruyen
+el disco externo no se ve afectado.
+
+Para eliminar el disco, se debe usar el mandato `vboxmanage` para quitarlo del registro de VirtualBox.
+
 
 
 # Cómo usar este repositorio
@@ -105,4 +126,4 @@ cual se debe hacer sólo una vez, pues es una operaci{on a nivel del dispositivo
 
 # Apéndice B: Instalación manual
 
-Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manual.md) 
+Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manual-lab1.md) para el Lab1.
