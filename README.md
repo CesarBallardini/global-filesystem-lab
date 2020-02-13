@@ -137,6 +137,12 @@ pues es una operaci{on a nivel del dispositivo de bloque.
 * https://bitbucket.org/hirofuchi/xnbd/wiki/Home#!scenario-4-ocfs2-with-xnbd
 * https://blogs.oracle.com/cloud-infrastructure/a-simple-guide-to-oracle-cluster-file-system-ocfs2-using-iscsi-on-oracle-cloud-infrastructure OCFS2 + iSCSI
 * https://www.howtoinstall.me/ubuntu/18-04/gfs2-utils/
+* https://oss.oracle.com/pipermail/ocfs2-users/2012-October/005902.html OCFS2 hanging on writes -- SOLVED
+* https://www.mankier.com/8/defragfs.ocfs2 online defragmenter for ocfs2 filesystem
+* https://www.mankier.com/7/ocfs2 OCFS2 volumes can be exported as NFS volumes
+* https://news.ycombinator.com/item?id=1475232 en 2010, versión 1.4, The main problem is that when you get fragmented too badly you run into space allocation issues where you have tons of free space.
+* https://www.thegeekdiary.com/how-to-resize-an-ocfs2-filesystem-on-linux/ la ampliación se hace con el fs DESMONTADO de todos los nodos del cluster;
+  como toda operación peligroso, saólo debe intentarse después de contar con respaldos completos, consistentes  y actuales de los archivos.
 
 # Apéndice B: Instalación manual
 
