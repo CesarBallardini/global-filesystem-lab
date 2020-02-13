@@ -147,3 +147,8 @@ pues es una operaci{on a nivel del dispositivo de bloque.
 # Apéndice B: Instalación manual
 
 Para crear `Vagrantfile.auto` primero usé `Vagrantfile.manual` y las instrucciones de [Instalación manual](instalacion-manual-lab1.md) para el Lab1.
+
+# Apéndice C: TODO
+
+* https://www.golinuxcloud.com/configure-gfs2-setup-cluster-linux-rhel-centos-7/ instalar GFS2 sobre Ubuntu y Debian
+* https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html-single/global_file_system_2/index#s1-manage-growfs crece online
